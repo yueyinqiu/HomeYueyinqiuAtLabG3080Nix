@@ -8,10 +8,11 @@ origin="$STATE_DIRECTORY/origin.yaml"
 if [ -z "$(find "$origin" -mtime -30)" ]; then
     curl -L -H "User-Agent: flclash" \
         --output "$origin" \
-        https://vx.yeshayun.com/
+        https://baipiaoyes.top/
 fi
 
 "$MMMM" \
     merge "$origin" \
     js to-global.js \
+    js remove-fallback-filter.js \
     save "$OUTPUT_PATH"
