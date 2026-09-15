@@ -2,11 +2,11 @@
   my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
-        Description = "run python, a versatile and easy-to-learn language that lets you work quickly and integrate systems more effectively";
+        Description = "run proot, a user-space implementation of chroot, mount --bind, and binfmt_misc";
         Command = [
           {
             "$type" = "CommandTokenLiteral";
-            Value = "python";
+            Value = "proot";
           }
         ];
         ExtraArguments = true;

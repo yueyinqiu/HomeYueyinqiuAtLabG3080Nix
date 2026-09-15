@@ -2,11 +2,11 @@
   my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
-        Description = "run snavi, a navi-like interactive command-line cheatsheet tool but it's more safe with structured cheat file and CSharp script support";
+        Description = "list files in trash";
         Command = [
           {
             "$type" = "CommandTokenLiteral";
-            Value = "my-snavi-global";
+            Value = "trash-list";
           }
         ];
         ExtraArguments = false;

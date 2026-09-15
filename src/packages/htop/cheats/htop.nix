@@ -2,14 +2,14 @@
   my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
-        Description = "run nixd, a feature-rich nix language server interoperating with C++ nix";
+        Description = "run htop, a cross-platform interactive process viewer";
         Command = [
           {
             "$type" = "CommandTokenLiteral";
-            Value = "nixd";
+            Value = "htop";
           }
         ];
-        ExtraArguments = true;
+        ExtraArguments = false;
       };
     }
   ];

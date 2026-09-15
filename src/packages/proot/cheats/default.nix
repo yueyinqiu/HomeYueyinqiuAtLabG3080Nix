@@ -1,5 +1,5 @@
 { ... }: {
   imports = [
-    ./python.nix
+    ./proot.nix
   ];
 }

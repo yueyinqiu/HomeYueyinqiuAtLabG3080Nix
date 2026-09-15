@@ -1,10 +1,6 @@
 #:package Snavi.ArgumentSuggester@0.0.2
-#:package CliWrap@3.10.4
 
 using System.Runtime.CompilerServices;
-using System.Text.Json.Nodes;
-using CliWrap;
-using CliWrap.Buffered;
 using Snavi.ArgumentSuggester;
 
 await new Suggester().RunAsync();
@@ -18,14 +14,13 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        var output = await Cli.Wrap("opencode")
-            .WithArguments(["session", "list", "--format", "json"])
-            .WithWorkingDirectory(currentDirectory.FullName)
-            .ExecuteBufferedAsync(cancellationToken);
-        var node = JsonNode.Parse(output.StandardOutput);
-        foreach (var item in node?.AsArray()!)
+        foreach (var directory in currentDirectory.EnumerateDirectories())
         {
-            yield return ((string)item!["id"]!, (string)item["title"]!);
+            yield return (directory.Name, "");
+        }
+        foreach (var file in currentDirectory.EnumerateFiles())
+        {
+            yield return (file.Name, "");
         }
     }
 }

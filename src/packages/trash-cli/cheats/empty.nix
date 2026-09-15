@@ -2,14 +2,14 @@
   my.snavi-global-cheats = [
     {
       cheat = builtins.toJSON {
-        Description = "run nixfmt, the official formatter for Nix language code";
+        Description = "empty all files from trash";
         Command = [
           {
             "$type" = "CommandTokenLiteral";
-            Value = "nixfmt";
+            Value = "trash-empty";
           }
         ];
-        ExtraArguments = true;
+        ExtraArguments = false;
       };
     }
   ];

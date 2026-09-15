@@ -1,8 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    nixfmt
+    htop
   ];
-
   imports = [
     ./cheats
   ];

@@ -30,7 +30,6 @@ in
   imports = [
     ./ye-sha-yun
     ./bai-piao-ji-chang
-    ./tongji
     ./cheats
   ];
 

@@ -1,5 +1,5 @@
 { ... }: {
   imports = [
-    ./nixfmt.nix
+    ./htop.nix
   ];
 }

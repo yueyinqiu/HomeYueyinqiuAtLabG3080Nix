@@ -2,7 +2,6 @@
 #:package CliWrap@3.10.4
 
 using System.Runtime.CompilerServices;
-using System.Text.Json.Nodes;
 using CliWrap;
 using CliWrap.Buffered;
 using Snavi.ArgumentSuggester;
@@ -18,14 +17,11 @@ class Suggester : SnaviArgumentSuggester
         [EnumeratorCancellation] CancellationToken cancellationToken
     )
     {
-        var output = await Cli.Wrap("opencode")
-            .WithArguments(["session", "list", "--format", "json"])
-            .WithWorkingDirectory(currentDirectory.FullName)
-            .ExecuteBufferedAsync(cancellationToken);
-        var node = JsonNode.Parse(output.StandardOutput);
-        foreach (var item in node?.AsArray()!)
+        var output = await Cli.Wrap("trash-list").ExecuteBufferedAsync(cancellationToken);
+        foreach (var line in output.StandardOutput.Split(Environment.NewLine))
         {
-            yield return ((string)item!["id"]!, (string)item["title"]!);
+            var columns = line.Split(' ', 3);
+            yield return (columns[2], $"{columns[0]} {columns[1]}");
         }
     }
 }
