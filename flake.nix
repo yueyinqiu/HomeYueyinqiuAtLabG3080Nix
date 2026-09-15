@@ -1,10 +1,7 @@
 {
-  inputs = {    
+  inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
-    nixpkgs-master = {
-      url = "github:NixOS/nixpkgs/master";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -15,26 +12,27 @@
     nur = {
       url = "github:nix-community/NUR";
     };
+    nix-airgap = {
+      url = "github:bitbloxhub/nix-airgap";
+    };
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      vscode-server,
-      nur,
-      ...
-    }:
-    {
-      homeConfigurations."yueyinqiu@lab-g3080-nix" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {
-          vscode-server = vscode-server;
-          nur = nur.legacyPackages."x86_64-linux".repos;
-        };
-        modules = [
-          ./src
-        ];
+  outputs = inputs: {
+    homeConfigurations."yueyinqiu@lab-g3080-nix" = inputs.home-manager.lib.homeManagerConfiguration {
+      pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+      extraSpecialArgs = {
+        vscode-server = inputs.vscode-server;
+        nur = inputs.nur.legacyPackages."x86_64-linux".repos;
       };
+      modules = [
+        ./src
+      ];
     };
+    devShells = inputs.nixpkgs.lib.genAttrs inputs.nixpkgs.lib.systems.flakeExposed (system: {
+      default = import ./dev {
+        pkgs = inputs.nixpkgs.legacyPackages.${system};
+        nix-airgap = inputs.nix-airgap.packages.${system};
+      };
+    });
+  };
 }
