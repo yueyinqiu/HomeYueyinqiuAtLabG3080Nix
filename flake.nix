@@ -6,9 +6,6 @@
     home-manager = {
       url = "github:nix-community/home-manager/master";
     };
-    vscode-server = {
-      url = "github:nix-community/nixos-vscode-server";
-    };
     nur = {
       url = "github:nix-community/NUR";
     };
@@ -21,7 +18,6 @@
     homeConfigurations."yueyinqiu@lab-g3080-nix" = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = {
-        vscode-server = inputs.vscode-server;
         nur = inputs.nur.legacyPackages."x86_64-linux".repos;
       };
       modules = [
