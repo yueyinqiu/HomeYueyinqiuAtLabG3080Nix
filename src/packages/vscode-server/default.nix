@@ -5,7 +5,7 @@
           
   services.vscode-server.enable = true;
   services.vscode-server.enableFHS = true;
-  services.vscode-server.extraRuntimeDependencies = pkgs: [
+  services.vscode-server.extraRuntimeDependencies = [
     pkgs.nixd
   ];
 }
