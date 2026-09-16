@@ -15,15 +15,20 @@
   };
 
   outputs = inputs: {
-    homeConfigurations."yueyinqiu@lab-g3080-nix" = inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
-      extraSpecialArgs = {
-        nur = inputs.nur.legacyPackages."x86_64-linux".repos;
+    homeConfigurations."yueyinqiu@lab-g3080-nix" =
+      let
+        system = "x86_64-linux";
+      in
+      inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          nur = inputs.nur.legacyPackages.${system}.repos;
+          nix-airgap = inputs.nix-airgap.packages.${system};
+        };
+        modules = [
+          ./src
+        ];
       };
-      modules = [
-        ./src
-      ];
-    };
     devShells = inputs.nixpkgs.lib.genAttrs inputs.nixpkgs.lib.systems.flakeExposed (system: {
       default = import ./dev {
         pkgs = inputs.nixpkgs.legacyPackages.${system};
