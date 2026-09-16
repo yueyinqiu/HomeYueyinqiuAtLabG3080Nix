@@ -1,4 +1,4 @@
-{ vscode-server, ... }: {
+{ pkgs, vscode-server, ... }: {
   imports = [
     vscode-server.homeModules.default
   ];
