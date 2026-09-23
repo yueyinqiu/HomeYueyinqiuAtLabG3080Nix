@@ -1,8 +1,8 @@
-{ lib, pkgs, ... }: {
+{ pkgs, lib, ... }: {
   programs.bash.enable = true;
-
   programs.bash.initExtra = lib.mkBefore ''
     . /etc/bash.bashrc
+    PROMPT_COMMAND=("history -a" "''${PROMPT_COMMAND[@]}")
   '';
 
   home.packages = [
@@ -16,6 +16,6 @@
   ];
 
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

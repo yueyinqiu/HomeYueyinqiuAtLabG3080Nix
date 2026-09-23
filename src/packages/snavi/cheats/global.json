@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "snavi"
+    }
+  ],
+  "Description": "snavi; cheatsheet",
+  "ExtraArguments": false
+}

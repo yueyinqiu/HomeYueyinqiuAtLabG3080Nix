@@ -7,6 +7,6 @@
   '';
   
   imports = [
-    ./cheats
+    ./cheats.nix
   ];
 }

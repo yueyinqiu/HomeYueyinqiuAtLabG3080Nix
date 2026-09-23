@@ -1,0 +1,25 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "git"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "ac"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "-m"
+    },
+    {
+      "$type": "CommandTokenVariable",
+      "Name": "message",
+      "Suggester": {
+        "$type": "ArgumentSuggesterEmpty"
+      }
+    }
+  ],
+  "Description": "git; add; commit",
+  "ExtraArguments": false
+}

@@ -1,0 +1,14 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "home-manager"
+    },
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "generations"
+    }
+  ],
+  "Description": "home-manager; generations",
+  "ExtraArguments": false
+}
