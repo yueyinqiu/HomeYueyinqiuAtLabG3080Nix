@@ -36,7 +36,7 @@ in
   config = {
     home.packages = [
       pkgs.mihomo
-      mixin
+      # mixin
       tui
 
       (pkgs.writeShellApplication {
