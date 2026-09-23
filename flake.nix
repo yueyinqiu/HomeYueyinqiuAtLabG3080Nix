@@ -12,6 +12,7 @@
     nix-airgap = {
       url = "github:bitbloxhub/nix-airgap";
     };
+    home-manager-mihomo-manager.url = "github:MihomoManager/HomeManagerMihomoManager";
   };
 
   outputs = inputs: {
@@ -26,6 +27,7 @@
           nix-airgap = inputs.nix-airgap.packages.${system};
         };
         modules = [
+          inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
           ./src
         ];
       };
