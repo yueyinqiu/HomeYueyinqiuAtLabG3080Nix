@@ -6,7 +6,7 @@
 
   programs.home-manager-mihomo-manager.instances.for-nix-daemon = {
     port = 57764;
-    configuration = ./config;
+    configuration = ./proxy;
   };
 
   systemd.user.services.nix-daemon-proxy-auto = {
