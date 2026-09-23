@@ -4,12 +4,9 @@
     nur.yueyinqiu.nix-daemon-proxy-client
   ];
 
-  my.proxies.for-nix-daemon = {
-    files = [
-      ./config.sh.example
-      ./rules.yaml
-    ];
-    port = 35441;
+  programs.home-manager-mihomo-manager.instances.for-nix-daemon = {
+    port = 57764;
+    configuration = ./config;
   };
 
   systemd.user.services.nix-daemon-proxy-auto = {
@@ -21,7 +18,7 @@
     };
     Service = {
       Type = "oneshot";
-      ExecStart = "${nur.yueyinqiu.nix-daemon-proxy-client}/bin/NixDaemonProxy.Client socks5 -H 127.0.0.1 -P 35441";
+      ExecStart = "${nur.yueyinqiu.nix-daemon-proxy-client}/bin/NixDaemonProxy.Client socks5 -H 127.0.0.1 -P 57764";
       Restart = "on-failure";
       RestartSec = "5s";
       StartLimitIntervalSec = 300;
