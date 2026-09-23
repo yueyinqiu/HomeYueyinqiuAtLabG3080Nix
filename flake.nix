@@ -23,7 +23,6 @@
         modules = [
           inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
           inputs.snavi.homeManagerModules.snavi
-          inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
           ./src
         ];
       };
