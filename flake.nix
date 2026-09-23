@@ -1,17 +1,11 @@
 {
   inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-    };
-    nur = {
-      url = "github:nix-community/NUR";
-    };
-    nix-airgap = {
-      url = "github:bitbloxhub/nix-airgap";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    home-manager.url = "github:nix-community/home-manager/master";
+    nur.url = "github:nix-community/NUR";
+    nix-airgap.url = "github:bitbloxhub/nix-airgap";
+    snavi.url = "github:yueyinqiu/Snavi-Nix";
     home-manager-mihomo-manager.url = "github:MihomoManager/HomeManagerMihomoManager";
   };
 
@@ -27,6 +21,8 @@
           nix-airgap = inputs.nix-airgap.packages.${system};
         };
         modules = [
+          inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
+          inputs.snavi.homeManagerModules.snavi
           inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
           ./src
         ];
