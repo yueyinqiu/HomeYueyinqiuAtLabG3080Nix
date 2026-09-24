@@ -155,6 +155,21 @@
         "type": "github"
       }
     },
+    "home-manager-vscode-server-machine-settings": {
+      "locked": {
+        "lastModified": 1790226943,
+        "narHash": "sha256-wnECl6oplvH8g49/hNy5bzysCux85Lq9KMXkCs+Z1x4=",
+        "owner": "yueyinqiu",
+        "repo": "HomeManagerVscodeServerMachineSettings",
+        "rev": "168cc91b6241404e5dcb2a2c35e4d3973b798994",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yueyinqiu",
+        "repo": "HomeManagerVscodeServerMachineSettings",
+        "type": "github"
+      }
+    },
     "import-tree": {
       "locked": {
         "lastModified": 1784254960,
@@ -448,6 +463,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "home-manager-mihomo-manager": "home-manager-mihomo-manager",
+        "home-manager-vscode-server-machine-settings": "home-manager-vscode-server-machine-settings",
         "nix-airgap": "nix-airgap",
         "nixpkgs": "nixpkgs_5",
         "nur": "nur",

@@ -7,6 +7,7 @@
     nix-airgap.url = "github:bitbloxhub/nix-airgap";
     snavi.url = "github:yueyinqiu/Snavi-Nix";
     home-manager-mihomo-manager.url = "github:MihomoManager/HomeManagerMihomoManager";
+    home-manager-vscode-server-machine-settings.url = "github:yueyinqiu/HomeManagerVscodeServerMachineSettings";
   };
 
   outputs = inputs: {
@@ -23,6 +24,7 @@
         modules = [
           inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
           inputs.snavi.homeManagerModules.snavi
+          inputs.home-manager-vscode-server-machine-settings.homeManagerModules.home-manager-vscode-server-machine-settings
           ./src
         ];
       };
