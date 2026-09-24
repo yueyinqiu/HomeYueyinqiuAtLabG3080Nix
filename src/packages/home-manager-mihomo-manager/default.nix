@@ -1,3 +1,3 @@
 { ... }: {
-  programs.home-manager-mihomo-manager.enable = true;
+  home-manager-mihomo-manager.enable = true;
 }
