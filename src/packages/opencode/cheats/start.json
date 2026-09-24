@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "opencode"
+    }
+  ],
+  "Description": "opencode; start",
+  "ExtraArguments": false
+}
