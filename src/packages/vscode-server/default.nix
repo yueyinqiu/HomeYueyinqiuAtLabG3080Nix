@@ -4,14 +4,14 @@
     enable = true;
     mutable = true;
     settings = {
-    "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
-    "nix.serverSettings" = {
-      "nixd" = {
-        "formatting" = {
-          "command" = [ "${pkgs.nixfmt}/bin/nixfmt" ];
+      "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
+      "nix.serverSettings" = {
+        "nixd" = {
+          "formatting" = {
+            "command" = [ "${pkgs.nixfmt}/bin/nixfmt" ];
+          };
         };
       };
-    };
     };
   };
 }

@@ -1,4 +1,9 @@
-{ name, pkgs, nix-airgap, ... }:
+{
+  name,
+  pkgs,
+  nix-airgap,
+  ...
+}:
 
 let
   installable = ".#homeConfigurations.\"yueyinqiu@lab-g3080-nix\".activationPackage";
