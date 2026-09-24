@@ -1,0 +1,10 @@
+{
+  "Command": [
+    {
+      "$type": "CommandTokenLiteral",
+      "Value": "yazi"
+    }
+  ],
+  "Description": "yazi; file; manager",
+  "ExtraArguments": false
+}
