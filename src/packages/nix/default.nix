@@ -1,10 +1,13 @@
 {
+  pkgs,
   ...
 }:
 {
   programs.bash.bashrcExtra = ''
     . "$HOME/.nix-profile/etc/profile.d/nix.sh"
   '';
+
+  nix.package = pkgs.nix;
 
   nix.settings = {
     experimental-features = [
