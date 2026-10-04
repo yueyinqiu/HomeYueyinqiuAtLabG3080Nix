@@ -64,32 +64,56 @@ in
         command = "${tex}/bibtex";
         args = [ "%DOCFILE%" ];
       }
-    ];
-
-    "latex-workshop.latex.recipes" = [
       {
-        name = "latexmk";
-        tools = [ "latexmk" ];
+        name = "rnw2tex";
+        command = "${pkgs.R}/bin/Rscript";
+        args = [
+          "-e"
+          "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+        ];
       }
       {
-        name = "latexmk (latexmkrc)";
-        tools = [ "latexmk_rconly" ];
+        name = "jnw2tex";
+        command = "${pkgs.julia}/bin/julia";
+        args = [
+          "-e"
+          "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+        ];
       }
       {
-        name = "latexmk (lualatex)";
-        tools = [ "lualatexmk" ];
+        name = "jnw2texminted";
+        command = "${pkgs.julia}/bin/julia";
+        args = [
+          "-e"
+          "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+        ];
       }
       {
-        name = "latexmk (xelatex)";
-        tools = [ "xelatexmk" ];
+        name = "pnw2tex";
+        command = "${pkgs.python3Packages.pweave}/bin/pweave";
+        args = [
+          "-f"
+          "tex"
+          "%DOC_EXT%"
+        ];
       }
       {
-        name = "pdflatex -> bibtex -> pdflatex * 2";
-        tools = [
-          "pdflatex"
-          "bibtex"
-          "pdflatex"
-          "pdflatex"
+        name = "pnw2texminted";
+        command = "${pkgs.python3Packages.pweave}/bin/pweave";
+        args = [
+          "-f"
+          "texminted"
+          "%DOC_EXT%"
+        ];
+      }
+      {
+        name = "tectonic";
+        command = "${pkgs.tectonic}/bin/tectonic";
+        args = [
+          "--synctex"
+          "--keep-logs"
+          "--print"
+          "%DOC%.tex"
         ];
       }
     ];
