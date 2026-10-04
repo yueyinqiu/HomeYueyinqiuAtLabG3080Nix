@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home.packages = [ 
-    pkgs.qemu 
+  home.packages = [
+    pkgs.quickemu
   ];
 }
