@@ -1,9 +1,14 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [
     ./cheats.nix
   ];
 
-  home.packages = with pkgs; [
-    tmux
-  ];
+  programs.tmux = {
+    enable = true;
+    mouse = true;
+    extraConfig = ''
+      set -g extended-keys on
+      set -g extended-keys-format csi-u
+    '';
+  };
 }
