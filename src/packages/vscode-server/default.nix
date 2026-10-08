@@ -1,10 +1,6 @@
 { ... }:
 {
-  home-manager-vscode-server-machine-settings = {
-    enable = true;
-    mutable = true;
-  };
-
+  home-manager-vscode-server-machine-settings.enable = true;
   imports = [
     ./languages
   ];
