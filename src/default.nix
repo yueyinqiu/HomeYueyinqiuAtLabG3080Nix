@@ -6,7 +6,5 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  imports = [ ./packages ];
-
   home.stateVersion = "26.05";
 }

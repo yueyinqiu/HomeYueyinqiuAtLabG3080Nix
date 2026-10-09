@@ -13,8 +13,4 @@
     };
     lfs.enable = true;
   };
-
-  imports = [
-    ./cheats.nix
-  ];
 }

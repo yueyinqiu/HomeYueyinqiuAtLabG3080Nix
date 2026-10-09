@@ -1,8 +1,4 @@
 { ... }: {
-  imports = [
-    ./cheats.nix
-  ];
-
   programs.pi-coding-agent = {
     enable = true;
 

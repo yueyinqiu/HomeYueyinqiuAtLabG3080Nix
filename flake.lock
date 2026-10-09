@@ -172,6 +172,21 @@
     },
     "import-tree": {
       "locked": {
+        "lastModified": 1788467110,
+        "narHash": "sha256-ljEMTXP/rH0tOvDzc9gzwww6KcHRPRnEHzd9lK48V7s=",
+        "owner": "denful",
+        "repo": "import-tree",
+        "rev": "eb1b52eaecc57f7c136d07ae8a93e724dfecac46",
+        "type": "github"
+      },
+      "original": {
+        "owner": "denful",
+        "repo": "import-tree",
+        "type": "github"
+      }
+    },
+    "import-tree_2": {
+      "locked": {
         "lastModified": 1784254960,
         "narHash": "sha256-iI88R3wHz8wTKQb5orvpc51L/Xr64AJyxid/0MKa/b8=",
         "owner": "vic",
@@ -228,7 +243,7 @@
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",
         "flint": "flint",
-        "import-tree": "import-tree",
+        "import-tree": "import-tree_2",
         "make-shell": "make-shell",
         "nixpkgs": "nixpkgs_4",
         "pedantix": "pedantix",
@@ -464,6 +479,7 @@
         "home-manager": "home-manager",
         "home-manager-mihomo-manager": "home-manager-mihomo-manager",
         "home-manager-vscode-server-machine-settings": "home-manager-vscode-server-machine-settings",
+        "import-tree": "import-tree",
         "nix-airgap": "nix-airgap",
         "nixpkgs": "nixpkgs_5",
         "nur": "nur",

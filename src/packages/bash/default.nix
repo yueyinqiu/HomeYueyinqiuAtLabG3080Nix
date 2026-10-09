@@ -14,8 +14,4 @@
       '';
     })
   ];
-
-  imports = [
-    ./cheats.nix
-  ];
 }

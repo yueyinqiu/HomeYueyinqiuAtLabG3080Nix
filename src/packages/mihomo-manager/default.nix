@@ -9,8 +9,4 @@
       '';
     })
   ];
-
-  imports = [
-    ./cheats.nix
-  ];
 }

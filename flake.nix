@@ -1,7 +1,8 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    import-tree.url = "github:denful/import-tree";
 
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     nur.url = "github:nix-community/NUR";
     nix-airgap.url = "github:bitbloxhub/nix-airgap";
@@ -25,7 +26,7 @@
           inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
           inputs.snavi.homeManagerModules.snavi
           inputs.home-manager-vscode-server-machine-settings.homeManagerModules.home-manager-vscode-server-machine-settings
-          ./src
+          (inputs.import-tree ./src)
         ];
       };
     devShells = inputs.nixpkgs.lib.genAttrs inputs.nixpkgs.lib.systems.flakeExposed (system: {
