@@ -13,11 +13,19 @@ in
 pkgs.writeShellApplication {
   name = name;
   text = ''
-    "${nix-airgap.airgap}/bin/nix-airgap" \
-      "${installable}" \
-      "${remoteHost}" \
-      --remote-out-link "${remoteOutLink}"
+    ${pkgs.lib.escapeShellArgs [
+      "${nix-airgap.airgap}/bin/nix-airgap"
+      installable
+      remoteHost
+      "--remote-out-link"
+      remoteOutLink
+    ]}
 
-    ssh "${remoteHost}" -- "${remoteOutLink}/activate"
+    ${pkgs.lib.escapeShellArgs [
+      "ssh"
+      remoteHost
+      "--"
+      "${remoteOutLink}/activate"
+    ]}
   '';
 }
